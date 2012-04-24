@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="coffee-script.js"></script>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script src="jquery.console.js"></script>
+</head>
+<body>
+   <div class="console"></div>
+<script>
+
+//do not know
+//var tabId = chrome.devtools.inspectedWindow.tabId;
+var cofeeConsole = $('div.console'),
+    controller = cofeeConsole.console({
+        promptLabel: 'CoffeeScript> ',
+        commandValidate: function(line){
+            if (line == "") 
+                return false;
+            else 
+                return true;
+            },
+        commandHandle: function(line, callback){
+            try{
+                var compiledSource = CoffeeScript.compile(line, {bare:true});
+                chrome.devtools.inspectedWindow.eval(compiledSource,function(result, isException) {
+                    if(isException){
+                        //not good do something better
+                        chrome.devtools.inspectedWindow.eval("console.log("+result+")");
+                    }else{
+                        callback(result)
+                    }      
+                });
+                //callback(eval(compiledSource).toString());
+            }catch(e){
+                return e.message;
+            }
+        },
+        autofocus:true,
+        animateScroll:true,
+        promptHistory:true
+        });
+
+</script>
+<style type="text/css">
+@-webkit-keyframes toggle
+{
+    0%   {opacity: 1;}
+    25%  {opacity: 0.75;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.25;}
+    100% {opacity: 0.0;}
+}
+div.console{ 
+    font-size: 14px; 
+}
+div.console div.jquery-console-inner{ 
+    padding:0.5em;
+    overflow:auto 
+}
+div.console div.jquery-console-prompt-box{ 
+    color:#444; 
+    font-family:monospace; 
+}
+div.console div.jquery-console-focus span.jquery-console-cursor{ 
+    background:#CACACA; 
+    color:#eee; 
+    font-weight:bold;
+    -webkit-animation-name: toggle;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+div.console div.jquery-console-message{
+    color:#00A33F; 
+    font-family:monospace;
+    padding:0.1em; 
+}
+div.console div.jquery-console-message-error{
+    color:#00A33F; 
+    font-family:monospace; 
+    font-weight:bold;
+    padding:0.1em; 
+}
+div.console div.jquery-console-message-success{ 
+    color:#00A33F; 
+    font-family:monospace;
+    padding:0.1em; 
+}
+div.console span.jquery-console-prompt-label{ 
+    font-weight:bold;
+    color: #0076AD;
+}
+
+</style>
+
+</body>
+</html>

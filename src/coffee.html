@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>launcher</title>
+    </head>
+    <body>
+        <script>
+            chrome.devtools.panels.create(
+                "CoffeeRepl",
+                "badge.png",
+                "coffee-console.html",
+                function cb(panel) {
+                    panel.onShown.addListener(function(win){ win.focus(); });
+                }
+            );
+        </script>
+    </body>
+</html>
+
