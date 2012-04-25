@@ -1,4 +1,4 @@
-# A dreams becoming reality
+# A dream becoming reality
 Have you ever thought that, it would be awesome if you could use [CoffeeScript](http://coffeescript.org/) instead of Javascript in your Chrome Developer Console. You know because CofeeScript rocks.
 Don't think again! Thanks to this extension, your wishes are becoming true.
 
