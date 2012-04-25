@@ -16,8 +16,8 @@ No mighty science involved here. Just install the crx by opening it in Chrome.
 * Pretty print Javascript Objects
 * Add syntax highlighting 
 
-# Special Thanks
-* [CoffeeScript](http://coffeescript.org/) for the most beautifull language out there and the js evaluator.
-* [Snook](http://snook.ca/archives/browsers/coffeeconsole) for his extension. It was inspirational.
+# Special Thanks to
+* [CoffeeScript](http://coffeescript.org/) for the most beautifull language out there and it's js compiler.
+* [Snook](http://snook.ca/archives/browsers/coffeeconsole) for his extension. It was very inspirational.
 
 
