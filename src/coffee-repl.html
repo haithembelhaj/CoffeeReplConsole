@@ -7,6 +7,10 @@
     <script src="jquery.console.js"></script>
     <script src="coffee-script.js"></script>
     <style type="text/css">
+
+    html,body{
+        height: 100%;
+    }
     @-webkit-keyframes toggle
     {
         0%   {opacity: 1;}
@@ -15,23 +19,24 @@
         75%  {opacity: 0.25;}
         100% {opacity: 0.0;}
     }
-    div.console{
+    .console{
         font-size: 14px;
+        height: 100%;
     }
     img{
         position: fixed;
         bottom: 0px;
         right: 30px;
     }
-    div.console div.jquery-console-inner{
+    .console .jquery-console-inner{
         padding:0.5em;
         overflow:auto
     }
-    div.console div.jquery-console-prompt-box{
+    .console .jquery-console-prompt-box{
         color:#444;
         font-family:monospace;
     }
-    div.console div.jquery-console-focus span.jquery-console-cursor{
+    .console .jquery-console-focus span.jquery-console-cursor{
         background:#CACACA;
         color:#eee;
         font-weight:bold;
@@ -42,23 +47,23 @@
         -webkit-animation-iteration-count: infinite;
         -webkit-animation-direction: alternate;
     }
-    div.console div.jquery-console-message{
+    .console .jquery-console-message{
         color:#00A33F;
         font-family:monospace;
         padding:0.1em;
     }
-    div.console div.jquery-console-message-error{
+    .console .jquery-console-message-error{
         color:#00A33F;
         font-family:monospace;
         font-weight:bold;
         padding:0.1em;
     }
-    div.console div.jquery-console-message-success{
+    .console .jquery-console-message-success{
         color:#00A33F;
         font-family:monospace;
         padding:0.1em;
     }
-    div.console span.jquery-console-prompt-label{
+    .console span.jquery-console-prompt-label{
         font-weight:bold;
         color: #0076AD;
     }
