@@ -1,10 +1,14 @@
 {
 	"manifest_version": 2,
 	"name": "CoffeeReplConsole",
-	"version": "0.1",
+	"version": "0.2.3",
 	"description": "A CoffeeScript Repl console within the Web Inspector.",
 	"devtools_page": "devtools.html",
 	"options_page": "coffee-repl.html",
     "icons": { "128": "128.png" },
-	"minimum_chrome_version" : "18"
+	"minimum_chrome_version" : "18",
+	"permissions": [
+		"tabs",
+		"contextMenus"
+	]
 }
